@@ -47,12 +47,12 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setActiveTab('overview')} 
             className="cursor-pointer group flex flex-col shrink-0"
           >
-            <div className="flex items-baseline gap-1">
-              <span className="text-emerald-950 dark:text-emerald-400 font-black text-2xl font-serif tracking-tight group-hover:text-emerald-800 dark:group-hover:text-emerald-300 transition">
-                Dom-I-
+            <div className="flex items-baseline gap-1.5 whitespace-nowrap">
+              <span className="text-emerald-950 dark:text-emerald-400 font-black text-lg sm:text-xl font-serif tracking-tight group-hover:text-emerald-800 dark:group-hover:text-emerald-300 transition">
+                Health By
               </span>
-              <span className="text-amber-700 dark:text-amber-400 font-black text-2xl font-serif tracking-widest group-hover:text-amber-600 dark:group-hover:text-amber-300 transition">
-                Nately
+              <span className="text-amber-700 dark:text-amber-400 font-black text-lg sm:text-xl font-serif tracking-wide group-hover:text-amber-600 dark:group-hover:text-amber-300 transition">
+                DomInNATEly
               </span>
             </div>
             <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-stone-500 dark:text-stone-400">
