@@ -1,0 +1,8 @@
+{
+  "name": "Remix Dom-I- Nately Health Informatics • Male Wellness",
+  "description": "Evidence-based health science. Exploring the real efficacy of supplements, medications, and clinical practices—strictly backed by peer-reviewed research and cited sources.\n\nIn an industry flooded with unverified health trends and sponsored claims, this community prioritizes raw data and clinical consensus. Our goal is to break down what actually works, what doesn\u0027t, and what the latest science really says about supplements, medications, and therapeutic practices.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

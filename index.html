@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom-I-Nately Health Informatics • Male Wellness</title>
+    <meta name="description" content="Evidence-based health science exploring the real efficacy of supplements, medications, and clinical practices—strictly backed by peer-reviewed research and cited sources." />
+    <meta property="og:title" content="Dom-I-Nately Health Informatics • Male Wellness" />
+    <meta property="og:description" content="Evidence-based health science exploring the real efficacy of supplements, medications, and clinical practices—strictly backed by peer-reviewed research and cited sources." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('dom-i-nately-theme') || 'auto';
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var shouldBeDark = saved === 'dark' || (saved === 'auto' && prefersDark);
+          if (shouldBeDark) document.documentElement.classList.add('dark');
+          else document.documentElement.classList.remove('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#FAF8F5] dark:bg-stone-950 text-stone-900 dark:text-stone-100 antialiased selection:bg-amber-200 selection:text-stone-900 dark:selection:bg-amber-500/30 dark:selection:text-amber-100 transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
