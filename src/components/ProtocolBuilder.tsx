@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Calculator, ShieldCheck, Check, AlertTriangle, FileText, Copy, X, Sparkles, HeartPulse } from 'lucide-react';
+import { Calculator, Check, AlertTriangle, Copy, X, Sparkles } from 'lucide-react';
+import { copyTextSafely } from '../utils/clipboard';
 
 interface ProtocolBuilderProps {
   isOpen: boolean;
@@ -108,8 +109,8 @@ export const ProtocolBuilder: React.FC<ProtocolBuilderProps> = ({ isOpen, onClos
     return text;
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(generateReportText());
+  const handleCopy = async () => {
+    await copyTextSafely(generateReportText());
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

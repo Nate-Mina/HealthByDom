@@ -3,7 +3,7 @@ import { ShieldAlert, Stethoscope, BookOpen, AlertCircle, CheckCircle2 } from 'l
 
 export const MedicalDisclaimerSection: React.FC = () => {
   return (
-    <section className="mb-16">
+    <section id="healthcare-disclaimer" className="mb-16">
       <div className="bg-gradient-to-br from-amber-50/90 via-stone-50 to-emerald-50/50 dark:from-amber-950/30 dark:via-stone-900 dark:to-emerald-950/30 rounded-3xl p-6 sm:p-10 border border-amber-200/80 dark:border-amber-800/50 shadow-xs relative overflow-hidden transition-colors">
         {/* Subtle Decorative Backdrop Badge */}
         <div className="absolute top-0 right-0 transform translate-x-6 -translate-y-6 w-48 h-48 bg-amber-200/20 dark:bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />

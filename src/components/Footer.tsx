@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openProtocolModal 
 
               {typeof window !== 'undefined' && window.location.protocol !== 'file:' && (
                 <a
-                  href="/download-single-html"
+                  href="dom_i_nately_health_standalone.html"
                   download="dom_i_nately_health_standalone.html"
                   className="inline-flex items-center gap-1.5 bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 px-3.5 py-2 rounded-xl transition font-bold"
                 >

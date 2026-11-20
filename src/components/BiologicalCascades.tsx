@@ -4,6 +4,19 @@ import { Activity, ShieldAlert, Zap, ArrowRight, Dna, CheckCircle2, ChevronRight
 export const BiologicalCascades: React.FC = () => {
   const [activeCascade, setActiveCascade] = useState<'vascular' | 'hpg'>('vascular');
   const [highlightStep, setHighlightStep] = useState<number | null>(null);
+  const [lockedStep, setLockedStep] = useState<number | null>(null);
+
+  const activeHighlight = lockedStep ?? highlightStep;
+
+  const toggleStep = (step: number) => {
+    setLockedStep((prev) => (prev === step ? null : step));
+  };
+
+  const handleCascadeSwitch = (cascade: 'vascular' | 'hpg') => {
+    setActiveCascade(cascade);
+    setLockedStep(null);
+    setHighlightStep(null);
+  };
 
   return (
     <section className="mb-16 bg-white dark:bg-stone-900 rounded-3xl p-6 sm:p-10 border border-stone-200 dark:border-stone-800 shadow-xs transition-colors">
@@ -23,7 +36,7 @@ export const BiologicalCascades: React.FC = () => {
         {/* Toggle Switch */}
         <div className="flex p-1 bg-stone-100 dark:bg-stone-800 rounded-2xl border border-stone-200/80 dark:border-stone-700 self-start md:self-auto">
           <button
-            onClick={() => setActiveCascade('vascular')}
+            onClick={() => handleCascadeSwitch('vascular')}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition ${
               activeCascade === 'vascular'
                 ? 'bg-emerald-900 text-amber-300 shadow-xs'
@@ -34,7 +47,7 @@ export const BiologicalCascades: React.FC = () => {
             <span>Vascular NO / cGMP Cascade</span>
           </button>
           <button
-            onClick={() => setActiveCascade('hpg')}
+            onClick={() => handleCascadeSwitch('hpg')}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition ${
               activeCascade === 'hpg'
                 ? 'bg-emerald-900 text-amber-300 shadow-xs'
@@ -62,10 +75,15 @@ export const BiologicalCascades: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* Step 1 */}
             <div 
+              role="button"
+              tabIndex={0}
+              aria-pressed={activeHighlight === 1}
+              onClick={() => toggleStep(1)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleStep(1); } }}
               onMouseEnter={() => setHighlightStep(1)}
               onMouseLeave={() => setHighlightStep(null)}
-              className={`p-5 rounded-2xl border transition ${
-                highlightStep === 1 
+              className={`p-5 rounded-2xl border transition cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                activeHighlight === 1 
                   ? 'bg-amber-50 dark:bg-amber-950/30 border-amber-400 dark:border-amber-500/70 shadow-md ring-2 ring-amber-400/20' 
                   : 'bg-stone-50 dark:bg-stone-800/60 border-stone-200 dark:border-stone-700 hover:border-stone-300 dark:hover:border-stone-600'
               }`}
@@ -91,10 +109,15 @@ export const BiologicalCascades: React.FC = () => {
 
             {/* Step 2 */}
             <div 
+              role="button"
+              tabIndex={0}
+              aria-pressed={activeHighlight === 2}
+              onClick={() => toggleStep(2)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleStep(2); } }}
               onMouseEnter={() => setHighlightStep(2)}
               onMouseLeave={() => setHighlightStep(null)}
-              className={`p-5 rounded-2xl border transition ${
-                highlightStep === 2 
+              className={`p-5 rounded-2xl border transition cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                activeHighlight === 2 
                   ? 'bg-amber-50 dark:bg-amber-950/30 border-amber-400 dark:border-amber-500/70 shadow-md ring-2 ring-amber-400/20' 
                   : 'bg-stone-50 dark:bg-stone-800/60 border-stone-200 dark:border-stone-700 hover:border-stone-300 dark:hover:border-stone-600'
               }`}
@@ -120,10 +143,15 @@ export const BiologicalCascades: React.FC = () => {
 
             {/* Step 3 */}
             <div 
+              role="button"
+              tabIndex={0}
+              aria-pressed={activeHighlight === 3}
+              onClick={() => toggleStep(3)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleStep(3); } }}
               onMouseEnter={() => setHighlightStep(3)}
               onMouseLeave={() => setHighlightStep(null)}
-              className={`p-5 rounded-2xl border transition ${
-                highlightStep === 3 
+              className={`p-5 rounded-2xl border transition cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                activeHighlight === 3 
                   ? 'bg-amber-50 dark:bg-amber-950/30 border-amber-400 dark:border-amber-500/70 shadow-md ring-2 ring-amber-400/20' 
                   : 'bg-stone-50 dark:bg-stone-800/60 border-stone-200 dark:border-stone-700 hover:border-stone-300 dark:hover:border-stone-600'
               }`}
@@ -146,10 +174,15 @@ export const BiologicalCascades: React.FC = () => {
 
             {/* Step 4 */}
             <div 
+              role="button"
+              tabIndex={0}
+              aria-pressed={activeHighlight === 4}
+              onClick={() => toggleStep(4)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleStep(4); } }}
               onMouseEnter={() => setHighlightStep(4)}
               onMouseLeave={() => setHighlightStep(null)}
-              className={`p-5 rounded-2xl border transition ${
-                highlightStep === 4 
+              className={`p-5 rounded-2xl border transition cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                activeHighlight === 4 
                   ? 'bg-amber-50 dark:bg-amber-950/30 border-amber-400 dark:border-amber-500/70 shadow-md ring-2 ring-amber-400/20' 
                   : 'bg-stone-50 dark:bg-stone-800/60 border-stone-200 dark:border-stone-700 hover:border-stone-300 dark:hover:border-stone-600'
               }`}
@@ -183,7 +216,20 @@ export const BiologicalCascades: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-stone-50 dark:bg-stone-800/60 p-5 rounded-2xl border border-stone-200 dark:border-stone-700">
+            <div
+              role="button"
+              tabIndex={0}
+              aria-pressed={activeHighlight === 1}
+              onClick={() => toggleStep(1)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleStep(1); } }}
+              onMouseEnter={() => setHighlightStep(1)}
+              onMouseLeave={() => setHighlightStep(null)}
+              className={`p-5 rounded-2xl border transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                activeHighlight === 1
+                  ? 'bg-amber-50 dark:bg-amber-950/30 border-amber-400 dark:border-amber-500/70 shadow-md ring-2 ring-amber-400/20'
+                  : 'bg-stone-50 dark:bg-stone-800/60 border-stone-200 dark:border-stone-700'
+              }`}
+            >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-bold text-emerald-900 dark:text-emerald-400 uppercase">01. Hypothalamus & Cortisol</span>
                 <Zap className="w-4 h-4 text-amber-500" />
@@ -193,11 +239,24 @@ export const BiologicalCascades: React.FC = () => {
                 Chronic elevated Cortisol directly suppresses GnRH release from the hypothalamus, causing secondary hypogonadism.
               </p>
               <div className="bg-emerald-50 dark:bg-emerald-950/60 p-3 rounded-xl border border-emerald-200/80 dark:border-emerald-800/60 text-xs text-emerald-900 dark:text-emerald-200 font-semibold">
-                ✨ <span className="font-bold">Ashwagandha (KSM-66):</span> Lowers serum Cortisol by ~27%, restoring GnRH pulsatility.
+                <span className="font-bold">Ashwagandha (KSM-66):</span> Lowers serum Cortisol by ~27%, restoring GnRH pulsatility.
               </div>
             </div>
 
-            <div className="bg-stone-50 dark:bg-stone-800/60 p-5 rounded-2xl border border-stone-200 dark:border-stone-700">
+            <div
+              role="button"
+              tabIndex={0}
+              aria-pressed={activeHighlight === 2}
+              onClick={() => toggleStep(2)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleStep(2); } }}
+              onMouseEnter={() => setHighlightStep(2)}
+              onMouseLeave={() => setHighlightStep(null)}
+              className={`p-5 rounded-2xl border transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                activeHighlight === 2
+                  ? 'bg-amber-50 dark:bg-amber-950/30 border-amber-400 dark:border-amber-500/70 shadow-md ring-2 ring-amber-400/20'
+                  : 'bg-stone-50 dark:bg-stone-800/60 border-stone-200 dark:border-stone-700'
+              }`}
+            >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-bold text-emerald-900 dark:text-emerald-400 uppercase">02. Testicular Leydig Cells</span>
                 <Dna className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
@@ -207,11 +266,24 @@ export const BiologicalCascades: React.FC = () => {
                 Luteinizing Hormone (LH) triggers cholesterol transport via StAR protein. 17β-HSD converts precursors to testosterone.
               </p>
               <div className="bg-emerald-50 dark:bg-emerald-950/60 p-3 rounded-xl border border-emerald-200/80 dark:border-emerald-800/60 text-xs text-emerald-900 dark:text-emerald-200 font-semibold">
-                🧪 <span className="font-bold">Zinc & Tongkat Ali:</span> Zinc is an essential cofactor for 17β-HSD; Tongkat Ali enhances Leydig cell output.
+                <span className="font-bold">Zinc & Tongkat Ali:</span> Zinc is an essential cofactor for 17β-HSD; Tongkat Ali enhances Leydig cell output.
               </div>
             </div>
 
-            <div className="bg-stone-50 dark:bg-stone-800/60 p-5 rounded-2xl border border-stone-200 dark:border-stone-700">
+            <div
+              role="button"
+              tabIndex={0}
+              aria-pressed={activeHighlight === 3}
+              onClick={() => toggleStep(3)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleStep(3); } }}
+              onMouseEnter={() => setHighlightStep(3)}
+              onMouseLeave={() => setHighlightStep(null)}
+              className={`p-5 rounded-2xl border transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                activeHighlight === 3
+                  ? 'bg-amber-50 dark:bg-amber-950/30 border-amber-400 dark:border-amber-500/70 shadow-md ring-2 ring-amber-400/20'
+                  : 'bg-stone-50 dark:bg-stone-800/60 border-stone-200 dark:border-stone-700'
+              }`}
+            >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-bold text-emerald-900 dark:text-emerald-400 uppercase">03. Enzymatic Clearance</span>
                 <ShieldAlert className="w-4 h-4 text-amber-600 dark:text-amber-400" />
@@ -221,7 +293,7 @@ export const BiologicalCascades: React.FC = () => {
                 Free testosterone is converted into Estradiol by Aromatase and into DHT by 5α-Reductase, or bound by SHBG.
               </p>
               <div className="bg-emerald-50 dark:bg-emerald-950/60 p-3 rounded-xl border border-emerald-200/80 dark:border-emerald-800/60 text-xs text-emerald-900 dark:text-emerald-200 font-semibold">
-                🛡️ <span className="font-bold">Fenugreek Extract:</span> Inhibits aromatase/5α-reductase, retaining more active Bioavailable Free T.
+                <span className="font-bold">Fenugreek Extract:</span> Inhibits aromatase/5α-reductase, retaining more active Bioavailable Free T.
               </div>
             </div>
           </div>

@@ -76,65 +76,30 @@ export const SafetyModule: React.FC = () => {
 
         {/* Distortion Matrix Bar Display */}
         <div className="space-y-4 bg-stone-950/80 p-6 rounded-2xl border border-stone-800">
-          {/* Item 1 */}
-          <div>
-            <div className="flex justify-between text-xs font-bold mb-1">
-              <span className="text-stone-300">Reported Erection Strength Improvement</span>
-              <span className={filterBotReviews ? 'text-red-400 font-mono' : 'text-emerald-400 font-mono'}>
-                {filterBotReviews ? 'Filtered Efficacy (-77% Drop)' : '100% Unfiltered Claims'}
-              </span>
-            </div>
-            <div className="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
-              <div 
-                className={`h-full transition-all duration-700 ${filterBotReviews ? 'bg-red-500 w-[23%]' : 'bg-emerald-500 w-[100%]'}`}
-              />
-            </div>
-          </div>
-
-          {/* Item 2 */}
-          <div>
-            <div className="flex justify-between text-xs font-bold mb-1">
-              <span className="text-stone-300">Reported Erection Maintenance Improvement</span>
-              <span className={filterBotReviews ? 'text-red-400 font-mono' : 'text-emerald-400 font-mono'}>
-                {filterBotReviews ? 'Filtered Efficacy (-83% Drop)' : '100% Unfiltered Claims'}
-              </span>
-            </div>
-            <div className="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
-              <div 
-                className={`h-full transition-all duration-700 ${filterBotReviews ? 'bg-red-500 w-[17%]' : 'bg-emerald-500 w-[100%]'}`}
-              />
-            </div>
-          </div>
-
-          {/* Item 3 */}
-          <div>
-            <div className="flex justify-between text-xs font-bold mb-1">
-              <span className="text-stone-300">Reported Overall Sexual Satisfaction</span>
-              <span className={filterBotReviews ? 'text-red-400 font-mono' : 'text-emerald-400 font-mono'}>
-                {filterBotReviews ? 'Filtered Efficacy (-90% Drop)' : '100% Unfiltered Claims'}
-              </span>
-            </div>
-            <div className="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
-              <div 
-                className={`h-full transition-all duration-700 ${filterBotReviews ? 'bg-red-500 w-[10%]' : 'bg-emerald-500 w-[100%]'}`}
-              />
-            </div>
-          </div>
-
-          {/* Item 4 */}
-          <div>
-            <div className="flex justify-between text-xs font-bold mb-1">
-              <span className="text-stone-300">Reported Intercourse Enjoyment</span>
-              <span className={filterBotReviews ? 'text-red-400 font-mono' : 'text-emerald-400 font-mono'}>
-                {filterBotReviews ? 'Filtered Efficacy (-88% Drop)' : '100% Unfiltered Claims'}
-              </span>
-            </div>
-            <div className="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
-              <div 
-                className={`h-full transition-all duration-700 ${filterBotReviews ? 'bg-red-500 w-[12%]' : 'bg-emerald-500 w-[100%]'}`}
-              />
-            </div>
-          </div>
+          {[
+            { label: 'Reported Erection Strength Improvement', drop: REVIEWMETA_DATA.strengthDrop },
+            { label: 'Reported Erection Maintenance Improvement', drop: REVIEWMETA_DATA.maintenanceDrop },
+            { label: 'Reported Overall Sexual Satisfaction', drop: REVIEWMETA_DATA.satisfactionDrop },
+            { label: 'Reported Intercourse Enjoyment', drop: REVIEWMETA_DATA.enjoymentDrop },
+          ].map((metric) => {
+            const retainedPct = 100 - metric.drop;
+            return (
+              <div key={metric.label}>
+                <div className="flex justify-between text-xs font-bold mb-1">
+                  <span className="text-stone-300">{metric.label}</span>
+                  <span className={filterBotReviews ? 'text-red-400 font-mono tabular-nums' : 'text-emerald-400 font-mono tabular-nums'}>
+                    {filterBotReviews ? `Filtered Efficacy (-${metric.drop}% Drop)` : '100% Unfiltered Claims'}
+                  </span>
+                </div>
+                <div className="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
+                  <div
+                    className={`h-full transition-all duration-700 ${filterBotReviews ? 'bg-red-500' : 'bg-emerald-500'}`}
+                    style={{ width: filterBotReviews ? `${retainedPct}%` : '100%' }}
+                  />
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <p className="text-xs text-stone-400 mt-4 italic text-right">

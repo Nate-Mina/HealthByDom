@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { 
   Bot, Send, Sparkles, Globe, ShieldAlert, X, RefreshCw, ExternalLink, User, Check, Copy, Info 
 } from 'lucide-react';
+import { copyTextSafely } from '../utils/clipboard';
 
 interface Message {
   id: string;
@@ -14,6 +15,70 @@ interface Message {
 interface GeminiChatbotProps {
   isOpen: boolean;
   onClose: () => void;
+}
+
+function renderInlineMarkdown(text: string): React.ReactNode[] {
+  const tokenRegex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g;
+  const parts = text.split(tokenRegex);
+  return parts.map((part, idx) => {
+    if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+      return <strong key={idx} className="font-bold">{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+      return <em key={idx} className="italic">{part.slice(1, -1)}</em>;
+    }
+    if (part.startsWith('`') && part.endsWith('`') && part.length > 2) {
+      return (
+        <code key={idx} className="px-1.5 py-0.5 rounded bg-stone-200/70 dark:bg-stone-800 font-mono text-[11px]">
+          {part.slice(1, -1)}
+        </code>
+      );
+    }
+    return <React.Fragment key={idx}>{part}</React.Fragment>;
+  });
+}
+
+function renderFormattedContent(content: string): React.ReactNode {
+  const lines = content.split(/\r?\n/);
+  const blocks: React.ReactNode[] = [];
+  let listItems: string[] = [];
+
+  const flushList = (keyPrefix: string) => {
+    if (listItems.length === 0) return;
+    blocks.push(
+      <ul key={keyPrefix} className="list-disc pl-5 space-y-1 my-1.5">
+        {listItems.map((item, i) => (
+          <li key={i}>{renderInlineMarkdown(item)}</li>
+        ))}
+      </ul>,
+    );
+    listItems = [];
+  };
+
+  lines.forEach((rawLine, index) => {
+    const trimmed = rawLine.trim();
+    const bulletMatch = trimmed.match(/^(?:[-*•]|\d+\.)\s+(.+)$/);
+
+    if (bulletMatch) {
+      listItems.push(bulletMatch[1]);
+      return;
+    }
+
+    flushList(`list-${index}`);
+
+    if (!trimmed) {
+      blocks.push(<div key={`gap-${index}`} className="h-2" />);
+    } else {
+      blocks.push(
+        <p key={`p-${index}`} className="leading-relaxed">
+          {renderInlineMarkdown(rawLine)}
+        </p>,
+      );
+    }
+  });
+
+  flushList('list-end');
+  return <div className="space-y-1 font-sans">{blocks}</div>;
 }
 
 export const GeminiChatbot: React.FC<GeminiChatbotProps> = ({ isOpen, onClose }) => {
@@ -85,6 +150,11 @@ I can answer your questions about:
         }),
       });
 
+      const contentType = res.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('STATIC_HOST_UNAVAILABLE');
+      }
+
       const data = await res.json();
 
       if (!res.ok) {
@@ -92,7 +162,7 @@ I can answer your questions about:
       }
 
       const assistantMsg: Message = {
-        id: (Date.now() + 1).toString(),
+        id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
         role: 'assistant',
         content: data.reply || 'No response returned from model.',
         groundingChunks: data.groundingChunks || [],
@@ -103,11 +173,12 @@ I can answer your questions about:
     } catch (err: any) {
       console.error('Chat error:', err);
       const isFileProtocol = typeof window !== 'undefined' && window.location.protocol === 'file:';
+      const isStaticHost = err?.message === 'STATIC_HOST_UNAVAILABLE';
       const errorMsg: Message = {
-        id: (Date.now() + 1).toString(),
+        id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
         role: 'assistant',
-        content: isFileProtocol
-          ? `⚠️ **Standalone Offline HTML Notice:** You are viewing this single HTML file locally (\`file://\`). Live Gemini AI & Google Search Grounding requires the backend \`/api/chat\` server endpoint, while all clinical modules, interactive charts, Protocol Builder, and VitalStats Analytics work 100% offline.`
+        content: isFileProtocol || isStaticHost
+          ? `⚠️ **Static / Offline Mode Notice:** Live Gemini AI & Google Search Grounding requires the Node.js \`/api/chat\` server endpoint (with \`GEMINI_API_KEY\`). On static hosts (such as GitHub Pages or local \`file://\`), all clinical modules, interactive charts, Protocol Advisor, and VitalStats Analytics continue to work 100% client-side.`
           : `⚠️ **Clinical AI Connection Notice:** ${err.message || 'Unable to complete request.'}\n\nPlease verify that your \`GEMINI_API_KEY\` is configured in Settings > Secrets.`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
@@ -117,8 +188,8 @@ I can answer your questions about:
     }
   };
 
-  const handleCopy = (id: string, text: string) => {
-    navigator.clipboard.writeText(text);
+  const handleCopy = async (id: string, text: string) => {
+    await copyTextSafely(text);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   };
@@ -157,15 +228,15 @@ I can answer your questions about:
           <div className="flex items-center gap-2">
             <button
               onClick={() => setEnableSearch(!enableSearch)}
-              title={enableSearch ? "Google Search Grounding ON" : "Search Grounding OFF"}
+              title={enableSearch ? "Google Search Grounding ON" : "Google Search Grounding OFF (Literature Model Only)"}
               className={`hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition border ${
                 enableSearch 
                   ? 'bg-emerald-900/80 text-amber-300 border-emerald-700' 
-                  : 'bg-emerald-950/40 text-stone-400 border-emerald-900'
+                  : 'bg-emerald-950/40 text-stone-300 border-emerald-800'
               }`}
             >
-              <Globe className={`w-3.5 h-3.5 ${enableSearch ? 'text-amber-300 animate-pulse' : 'text-stone-500'}`} />
-              <span>{enableSearch ? 'Live Web Search' : 'Offline Mode'}</span>
+              <Globe className={`w-3.5 h-3.5 ${enableSearch ? 'text-amber-300 animate-pulse' : 'text-stone-400'}`} />
+              <span>{enableSearch ? 'Live Web Search' : 'Literature Only'}</span>
             </button>
 
             <button
@@ -215,8 +286,8 @@ I can answer your questions about:
                 }`}
               >
                 {/* Message Text Formatting */}
-                <div className="whitespace-pre-wrap font-sans">
-                  {msg.content}
+                <div className="pr-5">
+                  {renderFormattedContent(msg.content)}
                 </div>
 
                 {/* Grounding Citations */}

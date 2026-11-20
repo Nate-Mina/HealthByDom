@@ -98,7 +98,7 @@ export default function App() {
         {/* Render Specific Tab Focus */}
         {activeTab === 'vitalstats' && (
           <>
-            <VitalStatsPortalModule />
+            <VitalStatsPortalModule isDark={isDark} />
             <MedicalDisclaimerSection />
           </>
         )}

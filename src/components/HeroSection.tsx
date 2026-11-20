@@ -9,18 +9,23 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, openProtocolModal, openGeminiChatbot }) => {
+  const [heroImgFailed, setHeroImgFailed] = React.useState(false);
+
   return (
     <section className="mb-12">
       <div className="bg-gradient-to-br from-emerald-950 via-emerald-900 to-stone-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl border border-emerald-800/40">
         {/* Background Image Layer */}
-        <div className="absolute inset-0 z-0 opacity-20 mixing-blend-overlay">
-          <img 
-            src={IMAGE_ASSETS.heroBanner} 
-            alt="Clinical Laboratory"
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        {!heroImgFailed && (
+          <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay pointer-events-none">
+            <img 
+              src={IMAGE_ASSETS.heroBanner} 
+              alt="Clinical Laboratory"
+              referrerPolicy="no-referrer"
+              onError={() => setHeroImgFailed(true)}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
 
         {/* Subtle Background Pattern */}
         <div className="absolute -right-16 -bottom-16 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -74,6 +79,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, openPr
             >
               <AlertTriangle className="w-4 h-4 text-amber-400" />
               <span>Adulteration & Quality Audit</span>
+            </button>
+          </div>
+
+          <div className="mt-4">
+            <button
+              type="button"
+              onClick={() => onExploreClick('references')}
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-200/90 hover:text-amber-300 underline decoration-emerald-400/50 hover:decoration-amber-300 underline-offset-4 transition cursor-pointer py-1 px-1.5 -ml-1.5 rounded-lg hover:bg-emerald-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              aria-label="Healthcare Disclaimer — view at top of Clinical Studies"
+            >
+              <span className="text-amber-400 font-bold text-sm leading-none" aria-hidden="true">*</span>
+              <span>Healthcare Disclaimer</span>
             </button>
           </div>
         </div>

@@ -52,6 +52,66 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #059669; }
         .amber-glow { box-shadow: 0 0 25px rgba(217, 119, 6, 0.2); }
         .emerald-glow { box-shadow: 0 0 25px rgba(16, 185, 129, 0.2); }
+
+        /* Embedded Light Theme Sync (used only when hosted inside light-mode parent app) */
+        html.embedded-light body { background-color: #f8fafc; color: #0f172a; }
+        html.embedded-light nav.glass-panel { background: rgba(255, 255, 255, 0.92); border-color: #e2e8f0; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06); }
+        html.embedded-light nav .text-white { color: #0f172a !important; }
+        html.embedded-light nav .text-slate-300 { color: #334155 !important; }
+        html.embedded-light nav .text-slate-400 { color: #64748b !important; }
+        html.embedded-light #mobileMenu { background: #ffffff; border-color: #e2e8f0; }
+
+        html.embedded-light main .glass-panel:not(.hero-dark) { background: rgba(255, 255, 255, 0.95); border-color: #e2e8f0; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05); }
+        html.embedded-light main .glass-card:not(.hero-card) { background: #ffffff; border-color: #e2e8f0; box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04); }
+        html.embedded-light main section:not(.hero-dark) h2,
+        html.embedded-light main section:not(.hero-dark) h3,
+        html.embedded-light main section:not(.hero-dark) h4 { color: #0f172a !important; }
+        html.embedded-light main section:not(.hero-dark) .text-white { color: #0f172a !important; }
+        html.embedded-light main section:not(.hero-dark) .text-slate-200 { color: #1e293b !important; }
+        html.embedded-light main section:not(.hero-dark) .text-slate-300 { color: #334155 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-slate-400 { color: #475569 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-slate-500 { color: #64748b !important; }
+        html.embedded-light main section:not(.hero-dark) .border-slate-800,
+        html.embedded-light main section:not(.hero-dark) .border-slate-800\/80,
+        html.embedded-light main section:not(.hero-dark) .border-slate-800\/60,
+        html.embedded-light main section:not(.hero-dark) .border-slate-700 { border-color: #e2e8f0 !important; }
+        html.embedded-light main section:not(.hero-dark) .divide-slate-800\/60 > :not([hidden]) ~ :not([hidden]) { border-color: #e2e8f0 !important; }
+        html.embedded-light main section:not(.hero-dark) .bg-slate-900,
+        html.embedded-light main section:not(.hero-dark) .bg-slate-900\/90,
+        html.embedded-light main section:not(.hero-dark) .bg-slate-900\/80,
+        html.embedded-light main section:not(.hero-dark) .bg-slate-900\/60 { background-color: #f1f5f9 !important; }
+        html.embedded-light main section:not(.hero-dark) .bg-slate-950,
+        html.embedded-light main section:not(.hero-dark) .bg-slate-950\/60 { background-color: #ffffff !important; }
+        html.embedded-light main section:not(.hero-dark) thead.bg-slate-950 { background-color: #f1f5f9 !important; color: #334155 !important; }
+        html.embedded-light main section:not(.hero-dark) .hover\:bg-slate-800\/40:hover { background-color: #f8fafc !important; }
+        html.embedded-light main section:not(.hero-dark) .text-brand-400 { color: #047857 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-brand-300 { color: #065f46 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-emerald-400 { color: #047857 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-cyan-400 { color: #0e7490 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-amber-400 { color: #b45309 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-amber-300 { color: #92400e !important; }
+        html.embedded-light main section:not(.hero-dark) .text-rose-400 { color: #be123c !important; }
+        html.embedded-light main section:not(.hero-dark) .text-rose-300 { color: #9f1239 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-indigo-300 { color: #4338ca !important; }
+        html.embedded-light main section:not(.hero-dark) .bg-rose-950\/30 { background-color: #fff1f2 !important; }
+        html.embedded-light main section:not(.hero-dark) .bg-rose-950\/80 { background-color: #ffe4e6 !important; color: #881337 !important; }
+        html.embedded-light main section:not(.hero-dark) .bg-amber-950\/60,
+        html.embedded-light main section:not(.hero-dark) .bg-amber-950\/80 { background-color: #fef3c7 !important; color: #78350f !important; }
+        html.embedded-light main section:not(.hero-dark) .bg-emerald-950\/80 { background-color: #d1fae5 !important; color: #064e3b !important; }
+        html.embedded-light main section:not(.hero-dark) .text-rose-200 { color: #881337 !important; }
+        html.embedded-light main section:not(.hero-dark) .text-amber-200 { color: #78350f !important; }
+        html.embedded-light main section:not(.hero-dark) .text-emerald-200 { color: #064e3b !important; }
+        html.embedded-light main section:not(.hero-dark) .bg-slate-700 { background-color: #e2e8f0 !important; color: #334155 !important; }
+        html.embedded-light .tab-inactive { background-color: #f1f5f9; color: #475569; border-color: #cbd5e1; }
+        html.embedded-light #sentinelCanvas { background-color: #0f172a !important; }
+        html.embedded-light #citationModal .glass-panel,
+        html.embedded-light #assessmentModal .glass-panel { background: #ffffff; border-color: #cbd5e1; }
+        html.embedded-light #citationModal .text-white,
+        html.embedded-light #assessmentModal .text-white { color: #0f172a !important; }
+        html.embedded-light #citationModal .text-slate-300,
+        html.embedded-light #assessmentModal .text-slate-300 { color: #334155 !important; }
+        html.embedded-light #citationModal .bg-slate-900 { background-color: #f1f5f9 !important; border-color: #cbd5e1 !important; }
+        html.embedded-light #toast { background-color: #ffffff; color: #0f172a; }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-500 selection:text-white custom-scrollbar min-h-screen flex flex-col justify-between">
@@ -109,7 +169,7 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
         
         <!-- Hero Section -->
-        <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 p-8 sm:p-12 shadow-2xl">
+        <section class="hero-dark relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 p-8 sm:p-12 shadow-2xl">
             <div class="absolute -right-20 -top-20 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -left-20 -bottom-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -129,19 +189,19 @@
 
                 <!-- Hero Executive KPIs -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-                    <div class="glass-card p-4 rounded-2xl border-l-4 border-brand-500">
+                    <div class="glass-card hero-card p-4 rounded-2xl border-l-4 border-brand-500">
                         <span class="block text-2xl sm:text-3xl font-black text-brand-400 font-mono">57.6%</span>
                         <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">NHANES Population Rate</span>
                     </div>
-                    <div class="glass-card p-4 rounded-2xl border-l-4 border-cyan-500">
+                    <div class="glass-card hero-card p-4 rounded-2xl border-l-4 border-cyan-500">
                         <span class="block text-2xl sm:text-3xl font-black text-cyan-400 font-mono">73.1%</span>
                         <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Self-Initiated Care</span>
                     </div>
-                    <div class="glass-card p-4 rounded-2xl border-l-4 border-amber-500">
+                    <div class="glass-card hero-card p-4 rounded-2xl border-l-4 border-amber-500">
                         <span class="block text-2xl sm:text-3xl font-black text-amber-400 font-mono">45.5%</span>
                         <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">FDA Tainted (Sexual)</span>
                     </div>
-                    <div class="glass-card p-4 rounded-2xl border-l-4 border-emerald-500">
+                    <div class="glass-card hero-card p-4 rounded-2xl border-l-4 border-emerald-500">
                         <span class="block text-2xl sm:text-3xl font-black text-emerald-400 font-mono">97.0%</span>
                         <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Max Synergy SUCRA</span>
                     </div>
@@ -510,7 +570,7 @@
                                 <td class="p-4 font-bold text-white">Panax Ginseng</td>
                                 <td class="p-4">Ginsenosides (Rb1, Rg1)</td>
                                 <td class="p-4 font-mono text-xs">900 – 3000 mg/day</td>
-                                <td class="p-4">Significant IIEF score increase (SMD 0.43 to 0.65; p &lt; 0.001) <button onclick="showCitationModal(5)" class="text-brand-400 hover:underline font-mono ml-1">[5,11]</button></td>
+                                <td class="p-4">Significant IIEF score increase (SMD 0.43 to 0.65; p &lt; 0.001) <button onclick="showCitationModal(5)" class="text-brand-400 hover:underline font-mono ml-1">[5]</button><button onclick="showCitationModal(11)" class="text-brand-400 hover:underline font-mono">[11]</button></td>
                                 <td class="p-4"><span class="px-2.5 py-1 bg-brand-500/20 text-brand-300 border border-brand-500/30 rounded-lg text-xs font-bold">High (Low-Risk RCTs)</span></td>
                             </tr>
                             <tr class="hover:bg-slate-800/40 transition">
@@ -524,7 +584,7 @@
                                 <td class="p-4 font-bold text-white">Saffron (Crocus sativus)</td>
                                 <td class="p-4">Crocin, Safranal</td>
                                 <td class="p-4 font-mono text-xs">30 mg/day</td>
-                                <td class="p-4">Improved erectile & orgasmic domain scores vs placebo <button onclick="showCitationModal(12)" class="text-brand-400 hover:underline font-mono ml-1">[5,12]</button></td>
+                                <td class="p-4">Improved erectile & orgasmic domain scores vs placebo <button onclick="showCitationModal(5)" class="text-brand-400 hover:underline font-mono ml-1">[5]</button><button onclick="showCitationModal(12)" class="text-brand-400 hover:underline font-mono">[12]</button></td>
                                 <td class="p-4"><span class="px-2.5 py-1 bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 rounded-lg text-xs font-bold">Moderate (Multiple RCTs)</span></td>
                             </tr>
                             <tr class="hover:bg-slate-800/40 transition">
@@ -621,7 +681,7 @@
                                 <td class="p-4 font-mono text-xs text-rose-300">3g vs 6g / day</td>
                                 <td class="p-4 font-bold text-rose-400">
                                     Neutral at 3g; <span class="underline">12.5% DECREASE</span> in total T at 6g/day 
-                                    <button onclick="showCitationModal(21)" class="text-rose-400 hover:underline font-mono ml-1">[21,23]</button>
+                                    <button onclick="showCitationModal(21)" class="text-rose-400 hover:underline font-mono ml-1">[21]</button><button onclick="showCitationModal(23)" class="text-rose-400 hover:underline font-mono">[23]</button>
                                 </td>
                                 <td class="p-4 text-xs font-bold text-rose-300">
                                     NOT RECOMMENDED for resistance-trained men (Triggers DDO enzymatic feedback)
@@ -749,7 +809,7 @@
                 <div class="glass-panel p-6 rounded-3xl border border-slate-700 bg-slate-900/90 space-y-3">
                     <div class="w-10 h-10 bg-rose-600 text-white rounded-xl flex items-center justify-center font-black text-lg shadow-lg">!</div>
                     <h3 class="text-base font-bold text-white">Nitrate Co-Administration Danger</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed">Consuming undeclared PDE5 inhibitors alongside prescription cardiac nitrates (nitroglycerin) triggers life-threatening refractory hypotension <button onclick="showCitationModal(3)" class="text-brand-400 hover:underline font-mono ml-1">[3,7]</button>.</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">Consuming undeclared PDE5 inhibitors alongside prescription cardiac nitrates (nitroglycerin) triggers life-threatening refractory hypotension <button onclick="showCitationModal(3)" class="text-brand-400 hover:underline font-mono ml-1">[3]</button><button onclick="showCitationModal(7)" class="text-brand-400 hover:underline font-mono">[7]</button>.</p>
                 </div>
             </div>
 
@@ -1034,6 +1094,58 @@
                 mechanism: 'Stimulates eNOS activity while suppressing vascular inflammatory signaling cascades.',
                 risks: 'Extremely safe; minor stomach upset in rare cases.',
                 ref: 5
+            },
+            {
+                id: 'propionyl_carnitine',
+                name: 'Propionyl-L-Carnitine + ALC',
+                category: 'Vascular / ED',
+                activeIngredient: 'PLC (2g) + Acetyl-L-Carnitine (2g)',
+                doseRange: '2000 mg + 2000 mg/day',
+                evidenceGrade: 'High',
+                iiefImpact: '97% SUCRA Rank w/ Sildenafil',
+                tImpact: 'Neutral',
+                mechanism: 'Enhances endothelial mitochondrial beta-oxidation and improves cavernous vascular smooth muscle reactivity.',
+                risks: 'Generally well-tolerated; mild fishy body odor at excessive dosages.',
+                ref: 10
+            },
+            {
+                id: 'beta_alanine',
+                name: 'Beta-Alanine (Carnosine Buffer)',
+                category: 'Ergogenic',
+                activeIngredient: 'Beta-Alanine Amino Acid',
+                doseRange: '3.2 – 6.4 g/day',
+                evidenceGrade: 'High',
+                iiefImpact: 'Neutral',
+                tImpact: 'Neutral',
+                mechanism: 'Rate-limiting precursor to intracellular carnosine, buffering hydrogen ion (H+) acidosis during 60–240s efforts.',
+                risks: 'Harmless transient paresthesia (skin tingling) when single doses exceed 1.6g.',
+                ref: 13
+            },
+            {
+                id: 'beetroot_nitrate',
+                name: 'Dietary Nitrate (Beetroot)',
+                category: 'Ergogenic',
+                activeIngredient: 'Inorganic Nitrate (NO3-)',
+                doseRange: '500 mg NO3- (~70mL juice)',
+                evidenceGrade: 'Moderate',
+                iiefImpact: 'Mild Endothelial Support',
+                tImpact: 'Neutral',
+                mechanism: 'Enters the oral nitrate-nitrite-nitric oxide reduction pathway to lower ATP and oxygen cost of exercise.',
+                risks: 'Avoid antibacterial mouthwash near dosing; benign beeturia discoloration.',
+                ref: 14
+            },
+            {
+                id: 'magnesium_glycinate',
+                name: 'Magnesium (Glycinate / Citrate)',
+                category: 'Micronutrient',
+                activeIngredient: 'Elemental Magnesium',
+                doseRange: '400 mg elemental/day',
+                evidenceGrade: 'Moderate',
+                iiefImpact: 'Supportive Vascular Tone',
+                tImpact: 'Reduces SHBG Binding (+Free T)',
+                mechanism: 'Supports neuromuscular relaxation and attenuates Sex Hormone-Binding Globulin (SHBG) affinity to liberate free testosterone.',
+                risks: 'High osmotic forms (oxide/citrate) may cause loose stools; glycinate preferred.',
+                ref: 15
             }
         ];
 
@@ -1043,11 +1155,17 @@
             2: { title: "Hypothalamic-Pituitary-Gonadal Axis & Natural Testosterone Boosters Synthesis", journal: "Revista Pediatrica / INSN Synthesis", year: "2023", pmid: "PMID: 41209823", summary: "Detailed RCT analysis of Ashwagandha KSM-66 (+167 ng/dL T rise in resistance trained men) and Tongkat Ali SHBG affinity." },
             3: { title: "Erectile Dysfunction: Causes, Treatment & the Cardiovascular Connection Guide", journal: "TeleDirectMD Health Clinical Guide", year: "2024", pmid: "Clinical Guideline", summary: "Establishes penile artery 1-2mm caliber as cardiovascular sentinel preceding MACE by 2-5 years." },
             5: { title: "Herbal dietary supplements for erectile dysfunction: Systematic review & meta-analysis", journal: "PMC / Urological Research", year: "2023", pmid: "PMC12902307", summary: "Meta-analysis confirming Panax Ginseng SMD improvements across IIEF-5 domain scores." },
+            7: { title: "AUA / EAU Erectile Dysfunction Pharmacotherapy & Nitrate Contraindication Consensus", journal: "Journal of Urology / EAU Guidelines", year: "2023", pmid: "Clinical Consensus", summary: "Documents acute fatal hypotension risk when PDE5 inhibitors or tainted OTC sexual pills are co-administered with cardiac nitrates." },
             9: { title: "The Potential Role of Arginine Supplements on Erectile Dysfunction: Systematic Review", journal: "PubMed / Journal of Sexual Medicine", year: "2019", pmid: "PMID: 30770070", summary: "Meta-analysis of 10 RCTs showing significant ED improvement (RR 1.48) with 1.5g-5g daily L-Arginine." },
             10: { title: "Nutraceutical interventions for erectile dysfunction: Network meta-analysis", journal: "PubMed / Network Meta-Analysis", year: "2024", pmid: "PMID: 39279185", summary: "SUCRA ranking showing 97% top rank for PLC + ALC + Sildenafil combination therapy in organic ED." },
+            11: { title: "Korean Red Ginseng for Erectile Dysfunction: Systematic Review of Double-Blind RCTs", journal: "Int. Journal of Impotence Research", year: "2020", pmid: "PMID: 30141203", summary: "Multi-center randomized trials verifying ginsenoside-mediated eNOS transcription and cavernosal relaxation." },
             12: { title: "Effect of Antioxidants Supplementation on Erectile Dysfunction: Systematic Review", journal: "PubMed / Antioxidants RCT Meta-Analysis", year: "2022", pmid: "PMID: 35246405", summary: "Demonstrates Saffron, Vitamin E, and CoQ10 protection against oxidative degradation of Nitric Oxide." },
+            13: { title: "Effects of beta-alanine supplementation on exercise performance: a meta-analysis", journal: "Amino Acids Systematic Review", year: "2012", pmid: "PMID: 22270375", summary: "Establishes +12.4% median improvement in high-intensity exercise capacity lasting 60 to 240 seconds via intramuscular carnosine buffering." },
+            14: { title: "The effect of nitrate supplementation on exercise performance in healthy individuals", journal: "Sports Medicine Meta-Analysis", year: "2013", pmid: "PMID: 23899751", summary: "Confirms dietary inorganic nitrate reduces skeletal muscle oxygen cost and enhances time-to-exhaustion." },
+            15: { title: "Effects of Magnesium Supplementation on Testosterone Levels of Athletes and Sedentary Subjects", journal: "Biological Trace Element Research", year: "2011", pmid: "PMID: 20352370", summary: "Demonstrates elevated free and total testosterone fractions following daily magnesium supplementation paired with training." },
             19: { title: "Zinc and Vitamin D Essentialities in Leydig Cell Steroidogenesis", journal: "Hims Medical Clinical Review", year: "2023", pmid: "PMID: 29841209", summary: "Examines 17β-HSD enzymatic dependency on elemental zinc in hypogonadal males." },
             21: { title: "The effects of D-aspartic acid supplementation in resistance-trained men", journal: "PMC / Journal of the International Society of Sports Nutrition", year: "2017", pmid: "PMC5571970", summary: "Proves that 6g daily DAA causes a statistically significant 12.5% drop in total testosterone due to DDO enzymatic adaptation." },
+            23: { title: "Three and six grams supplementation of d-aspartic acid in resistance trained men", journal: "Journal of the Int. Society of Sports Nutrition", year: "2015", pmid: "PMID: 25884294", summary: "Confirms neutral androgen effect at 3g and paradoxical testicular DDO feedback suppression at 6g/day." },
             25: { title: "Unapproved Pharmaceutical Ingredients Included in Dietary Supplements Associated With FDA Warnings", journal: "JAMA Network / PMC", year: "2019", pmid: "PMC6324457", summary: "FDA Tainted Database audit showing 45.5% of adulterated pills are sexual enhancement products with hidden PDE5 inhibitors." },
             26: { title: "Cross-Sectional Survey of Adulterated Sexual Enhancement Products Sold in California", journal: "Dove Press / Public Health", year: "2021", pmid: "PMID: 34102983", summary: "Retail sampling showing 65.7% of off-the-shelf male enhancement supplements contained undeclared Sildenafil or Tadalafil." },
             28: { title: "An Analysis of Popular Online Erectile Dysfunction Supplements & ReviewMeta Automated Filtration", journal: "PubMed / Journal of Sexual Medicine", year: "2019", pmid: "PMID: 31036522", summary: "Exposes 77-90% drop in positive erection efficacy claims after removing fraudulent automated online reviews." }
@@ -1062,8 +1180,54 @@
         };
 
         let chartMotivations, chartAge, chartSucra, chartReview;
+        let currentProtocolExportText = '';
 
-        window.onload = function() {
+        function getChartPalette() {
+            const isLight = document.documentElement.classList.contains('embedded-light');
+            return {
+                grid: isLight ? 'rgba(15, 23, 42, 0.08)' : 'rgba(255, 255, 255, 0.05)',
+                tickMuted: isLight ? '#475569' : '#94a3b8',
+                tickPrimary: isLight ? '#0f172a' : '#f8fafc'
+            };
+        }
+
+        function applyPortalTheme(isDark) {
+            document.documentElement.classList.toggle('embedded-light', !isDark);
+            const palette = getChartPalette();
+
+            [chartMotivations, chartAge, chartSucra, chartReview].forEach((chart) => {
+                if (!chart || !chart.options || !chart.options.scales) return;
+                if (chart.options.scales.x) {
+                    if (chart.options.scales.x.grid && chart.options.scales.x.grid.display !== false) {
+                        chart.options.scales.x.grid.color = palette.grid;
+                    }
+                    if (chart.options.scales.x.ticks) {
+                        chart.options.scales.x.ticks.color = chart === chartAge ? palette.tickPrimary : palette.tickMuted;
+                    }
+                }
+                if (chart.options.scales.y) {
+                    if (chart.options.scales.y.grid && chart.options.scales.y.grid.display !== false) {
+                        chart.options.scales.y.grid.color = palette.grid;
+                    }
+                    if (chart.options.scales.y.ticks) {
+                        chart.options.scales.y.ticks.color = chart === chartAge ? palette.tickMuted : palette.tickPrimary;
+                    }
+                }
+                chart.update('none');
+            });
+        }
+
+        window.addEventListener('message', (event) => {
+            if (event && event.data && event.data.type === 'DOM_INATELY_THEME') {
+                applyPortalTheme(Boolean(event.data.isDark));
+            }
+        });
+
+        function initPortal() {
+            const themeParam = new URLSearchParams(window.location.search).get('theme');
+            if (themeParam === 'light') {
+                document.documentElement.classList.add('embedded-light');
+            }
             renderDBGrid();
             calculateWizard();
             initMotivationsChart();
@@ -1072,7 +1236,15 @@
             initReviewChart();
             initReferencesGrid();
             drawSentinelCanvas();
-        };
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPortal);
+        } else {
+            initPortal();
+        }
+
+        window.addEventListener('resize', drawSentinelCanvas);
 
         function renderDBGrid() {
             const grid = document.getElementById('dbCardGrid');
@@ -1113,17 +1285,17 @@
                     </div>
 
                     <div class="space-y-2 pt-2 border-t border-slate-800/60 text-xs">
-                        <div class="flex justify-between">
+                        <div class="flex justify-between gap-2">
                             <span class="text-slate-400">Clinical Dose:</span>
-                            <span class="font-mono text-brand-400 font-bold">${item.doseRange}</span>
+                            <span class="font-mono text-brand-400 font-bold text-right">${item.doseRange}</span>
                         </div>
-                        <div class="flex justify-between">
+                        <div class="flex justify-between gap-2">
                             <span class="text-slate-400">Erectile / IIEF:</span>
-                            <span class="font-mono text-slate-200">${item.iiefImpact}</span>
+                            <span class="font-mono text-slate-200 text-right">${item.iiefImpact}</span>
                         </div>
-                        <div class="flex justify-between">
+                        <div class="flex justify-between gap-2">
                             <span class="text-slate-400">Testosterone Delta:</span>
-                            <span class="font-mono text-indigo-300">${item.tImpact}</span>
+                            <span class="font-mono text-indigo-300 text-right">${item.tImpact}</span>
                         </div>
                     </div>
 
@@ -1143,8 +1315,11 @@
         function filterDB() { renderDBGrid(); }
 
         function calculateWizard() {
-            const goal = document.getElementById('wizardGoal').value;
-            const weight = parseFloat(document.getElementById('wizardWeight').value) || 80;
+            const goalSelect = document.getElementById('wizardGoal');
+            const goal = goalSelect.value;
+            const goalLabel = goalSelect.selectedOptions[0].text;
+            const weight = Math.max(40, Math.min(180, parseFloat(document.getElementById('wizardWeight').value) || 80));
+            const age = Math.max(18, Math.min(100, parseInt(document.getElementById('wizardAge').value, 10) || 38));
             const nitrates = document.getElementById('wizardNitrates').checked;
             const stressed = document.getElementById('wizardStressed').checked;
             const trained = document.getElementById('wizardTrained').checked;
@@ -1155,15 +1330,28 @@
 
             warningsContainer.innerHTML = '';
             recsContainer.innerHTML = '';
+            const activeWarnings = [];
 
             // Nitrates Flag Check
             if (nitrates) {
+                const msg = 'Do NOT combine prescription nitrates with OTC sexual enhancement products or PDE5 inhibitors. Unapproved adulteration in OTC male pills presents a severe risk of refractory cardiovascular collapse.';
+                activeWarnings.push(`CONTRAINDICATION ALERT (NITRATES): ${msg}`);
                 warningsContainer.innerHTML += `
                     <div class="p-4 bg-rose-950/80 border-2 border-rose-500 rounded-2xl text-rose-200 text-xs space-y-1">
                         <div class="font-black uppercase tracking-wider text-sm flex items-center gap-2">
                             <i class="fa-solid fa-triangle-exclamation text-rose-400 text-base"></i> CONTRAINDICATION ALERT: NITRATE THERAPY DETECTED
                         </div>
-                        <p>Do NOT combine prescription nitrates with OTC sexual enhancement products or PDE5 inhibitors. Unapproved adulteration in OTC male pills presents a severe risk of refractory cardiovascular collapse.</p>
+                        <p>${msg}</p>
+                    </div>
+                `;
+            }
+
+            if (age >= 45 && goal === 'ed_vascular') {
+                const ageMsg = `Age ${age} vascular ED screening advised: Penile microvascular impairment precedes MACE by 2–5 years. Request lipid, HbA1c, and cardiovascular assessment alongside nutraceutical support.`;
+                activeWarnings.push(ageMsg);
+                warningsContainer.innerHTML += `
+                    <div class="p-3 bg-amber-950/60 border border-amber-500/40 rounded-xl text-amber-200 text-xs">
+                        <strong class="font-bold uppercase font-mono"><i class="fa-solid fa-heart-pulse mr-1"></i> Age ${age} Cardiovascular Screening Notice:</strong> ${ageMsg}
                     </div>
                 `;
             }
@@ -1171,7 +1359,7 @@
             let recommendations = [];
 
             if (goal === 'ed_vascular') {
-                const arg Dose = Math.round(weight * 40); // ~3200mg for 80kg
+                const argDose = Math.round(weight * 40); // ~3200mg for 80kg
                 recommendations.push({
                     title: 'L-Arginine + Citrulline NO Precursor Stack',
                     dose: `${argDose} mg L-Arginine + 6000 mg Citrulline Malate daily`,
@@ -1185,12 +1373,21 @@
                     note: 'Upregulates eNOS transcription directly in cavernous tissue.'
                 });
             } else if (goal === 'testosterone') {
-                recommendations.push({
-                    title: 'Ashwagandha (KSM-66)',
-                    dose: '300 mg twice daily (600 mg total)',
-                    grade: 'High Evidence (+14.7% to +16.7% T)',
-                    note: 'Attenuates cortisol and stress-induced GnRH suppression.'
-                });
+                if (stressed) {
+                    recommendations.push({
+                        title: 'Ashwagandha (KSM-66) — Priority HPA Modulator',
+                        dose: '300 mg twice daily (600 mg total)',
+                        grade: 'High Evidence (-27% Cortisol)',
+                        note: 'Prioritized for elevated baseline cortisol/stress: restores hypothalamic GnRH pulsatility and elevates total T (+14.7% to +16.7%).'
+                    });
+                } else {
+                    recommendations.push({
+                        title: 'Tongkat Ali (Physta / LJ100)',
+                        dose: '200 – 400 mg once daily',
+                        grade: 'Moderate Evidence (SHBG Reduction)',
+                        note: 'Supports Leydig cell steroidogenesis and reduces SHBG binding affinity in non-stressed cohorts.'
+                    });
+                }
                 if (deficient) {
                     recommendations.push({
                         title: 'Zinc Picolinate + Vitamin D3 Corrective Dose',
@@ -1199,16 +1396,27 @@
                         note: 'Required 17β-HSD enzymatic cofactor for Leydig cell steroidogenesis.'
                     });
                 }
-                recommendations.push({
-                    title: 'Fenugreek Seed Extract (Testofen)',
-                    dose: '600 mg once daily',
-                    grade: 'Moderate Evidence (+46% Free T)',
-                    note: 'Dual 5α-reductase and aromatase inhibitor.'
-                });
+                if (age >= 40) {
+                    recommendations.push({
+                        title: 'Fenugreek Seed Extract (Testofen)',
+                        dose: '600 mg once daily',
+                        grade: 'Moderate Evidence (+46% Free T)',
+                        note: `Dual 5α-reductase and aromatase inhibitor; calibrated for age ${age} declining bioavailable Free Testosterone.`
+                    });
+                } else {
+                    recommendations.push({
+                        title: 'Magnesium Glycinate + Sleep Recovery',
+                        dose: '400 mg elemental before sleep',
+                        grade: 'Moderate Evidence (+Free T Fraction)',
+                        note: `Attenuates SHBG binding for under-40 adult baseline (${age} yrs) without unnecessary aromatase suppression.`
+                    });
+                }
                 if (trained) {
+                    const daaMsg = 'High dose DAA (6g/day) triggers DDO enzymatic feedback in resistance-trained men, reducing total testosterone by 12.5%. DAA has been excluded from your recommended stack.';
+                    activeWarnings.push(`DAA CAUTION: ${daaMsg}`);
                     warningsContainer.innerHTML += `
                         <div class="p-3 bg-amber-950/60 border border-amber-500/40 rounded-xl text-amber-200 text-xs">
-                            <strong class="font-bold uppercase font-mono"><i class="fa-solid fa-circle-exclamation mr-1"></i> D-Aspartic Acid (DAA) Caution:</strong> High dose DAA (6g/day) triggers DDO enzymatic feedback in resistance-trained men, reducing total testosterone by 12.5%. DAA has been excluded from your recommended stack.
+                            <strong class="font-bold uppercase font-mono"><i class="fa-solid fa-circle-exclamation mr-1"></i> D-Aspartic Acid (DAA) Caution:</strong> ${daaMsg}
                         </div>
                     `;
                 }
@@ -1216,9 +1424,9 @@
                 const proteinDose = Math.round(weight * 0.4); // ~32g
                 recommendations.push({
                     title: 'Creatine Monohydrate Saturation / Maintenance',
-                    dose: '5 g daily (Post-workout or morning)',
+                    dose: `${weight >= 95 ? '5 – 7 g' : '5 g'} daily (Post-workout or morning)`,
                     grade: 'High Evidence (Gold Standard)',
-                    note: 'Maximizes intramuscular phosphocreatine ATP regeneration and cell hydration.'
+                    note: `Weight-adjusted maintenance (${weight} kg) maximizing intramuscular phosphocreatine ATP regeneration.`
                 });
                 recommendations.push({
                     title: 'Whey Protein Isolate',
@@ -1235,9 +1443,9 @@
             } else {
                 recommendations.push({
                     title: 'Multivitamin / Micronutrient Baseline',
-                    dose: '1 Daily Standard Dose',
+                    dose: age >= 50 ? '1 Daily Mature Adult Formula (B12/D3 Check)' : '1 Daily Standard Dose',
                     grade: 'General Wellness',
-                    note: 'Fills essential dietary gaps without exceeding Upper Intake Limits (UL).'
+                    note: `Calibrated for age ${age}: fills essential dietary gaps without exceeding Upper Intake Limits (UL).`
                 });
                 recommendations.push({
                     title: 'Omega-3 EPA/DHA Fish Oil',
@@ -1247,44 +1455,104 @@
                 });
             }
 
-            recommendations.forEach(rec => {
+            if (stressed && goal !== 'testosterone') {
+                recommendations.push({
+                    title: 'Ashwagandha (KSM-66) Stress Adjunct',
+                    dose: '300 mg twice daily (600 mg total)',
+                    grade: 'High Evidence (-27% Cortisol)',
+                    note: 'Added for chronic stress profile to blunt catabolic HPA cortisol overdrive and protect recovery.'
+                });
+            }
+
+            if (deficient && goal !== 'testosterone') {
+                recommendations.push({
+                    title: 'Zinc Picolinate + Vitamin D3 Repletion',
+                    dose: '15–30 mg Elemental Zinc + 3000–4000 IU Vitamin D3 daily',
+                    grade: 'High Evidence (Repletion)',
+                    note: 'Added for confirmed nutritional deficiency supporting endocrine and immune synthesis.'
+                });
+            }
+
+            let exportLines = [
+                'VitalStats Clinical Supplement Protocol',
+                `Goal: ${goalLabel}`,
+                `Profile: ${weight} kg | Age ${age} yrs | Stress: ${stressed ? 'High' : 'Baseline'} | Trained: ${trained ? 'Yes' : 'No'} | Deficiency: ${deficient ? 'Yes' : 'No'}`,
+                ''
+            ];
+            if (activeWarnings.length > 0) {
+                exportLines.push('CLINICAL WARNINGS:');
+                activeWarnings.forEach((w) => exportLines.push(`! ${w}`));
+                exportLines.push('');
+            }
+            exportLines.push('RECOMMENDED INTERVENTIONS:');
+
+            recommendations.forEach((rec, idx) => {
+                exportLines.push(`${idx + 1}. ${rec.title} [${rec.grade}]`);
+                exportLines.push(`   Dose: ${rec.dose}`);
+                exportLines.push(`   Note: ${rec.note}`);
+
                 recsContainer.innerHTML += `
                     <div class="p-4 bg-slate-900 rounded-2xl border border-slate-800 hover:border-slate-700 transition space-y-1">
-                        <div class="flex justify-between items-center">
+                        <div class="flex justify-between items-center gap-2">
                             <span class="font-bold text-white text-xs">${rec.title}</span>
-                            <span class="text-[10px] font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">${rec.grade}</span>
+                            <span class="text-[10px] font-mono text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20 shrink-0">${rec.grade}</span>
                         </div>
-                        <div class="text-xs font-mono text-emerald-400 font-bold">${rec.dose}</div>
+                        <div class="text-xs font-mono text-emerald-400 font-bold tabular-nums">${rec.dose}</div>
                         <p class="text-[11px] text-slate-400 leading-relaxed">${rec.note}</p>
                     </div>
                 `;
             });
+
+            exportLines.push('');
+            exportLines.push('Disclaimer: Educational research guide only. Consult a licensed physician.');
+            currentProtocolExportText = exportLines.join('\n');
         }
 
         function copyProtocolText() {
-            const goal = document.getElementById('wizardGoal').selectedOptions[0].text;
-            const text = `VitalStats Clinical Supplement Protocol\nGoal: ${goal}\nGenerated for ${document.getElementById('wizardWeight').value}kg individual.\nReview full evidence matrix at VitalStats.`;
-            
-            const dummy = document.createElement("textarea");
-            document.body.appendChild(dummy);
-            dummy.value = text;
-            dummy.select();
-            document.execCommand("copy");
-            document.body.removeChild(dummy);
+            const text = currentProtocolExportText || 'VitalStats Clinical Supplement Protocol';
+            const fallbackCopy = () => {
+                const dummy = document.createElement("textarea");
+                dummy.style.position = "fixed";
+                dummy.style.opacity = "0";
+                document.body.appendChild(dummy);
+                dummy.value = text;
+                dummy.select();
+                try { document.execCommand("copy"); } catch (e) {}
+                document.body.removeChild(dummy);
+                showToast("Full protocol copied to clipboard!");
+            };
 
-            showToast("Protocol copied to clipboard!");
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast("Full protocol copied to clipboard!");
+                }).catch(fallbackCopy);
+            } else {
+                fallbackCopy();
+            }
+        }
+
+        function getSortedCohortMotivations(view) {
+            return nhanesData.labels
+                .map((label, idx) => ({
+                    label,
+                    value: nhanesData[view][idx]
+                }))
+                .sort((a, b) => b.value - a.value);
         }
 
         function initMotivationsChart() {
             const ctx = document.getElementById('motivationsChart').getContext('2d');
+            const sorted = getSortedCohortMotivations('overall');
+            const palette = getChartPalette();
+
             chartMotivations = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: nhanesData.labels,
+                    labels: sorted.map(item => item.label),
                     datasets: [{
                         label: 'Prevalence (%)',
-                        data: nhanesData.overall,
-                        backgroundColor: 'rgba(16, 185, 129, 0.75)',
+                        data: sorted.map(item => item.value),
+                        backgroundColor: 'rgba(16, 185, 129, 0.78)',
                         borderRadius: 8
                     }]
                 },
@@ -1299,8 +1567,8 @@
                         }
                     },
                     scales: {
-                        x: { beginAtZero: true, max: 50, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
-                        y: { grid: { display: false }, ticks: { color: '#f8fafc', font: { weight: 'bold', size: 11 } } }
+                        x: { beginAtZero: true, max: 50, grid: { color: palette.grid }, ticks: { color: palette.tickMuted } },
+                        y: { grid: { display: false }, ticks: { color: palette.tickPrimary, font: { weight: 'bold', size: 11 } } }
                     }
                 }
             });
@@ -1314,8 +1582,10 @@
                     : 'px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition tab-inactive';
             });
 
-            chartMotivations.data.datasets[0].data = nhanesData[view];
-            chartMotivations.data.datasets[0].backgroundColor = view === 'male' ? 'rgba(56, 189, 248, 0.75)' : (view === 'female' ? 'rgba(244, 63, 94, 0.75)' : 'rgba(16, 185, 129, 0.75)');
+            const sorted = getSortedCohortMotivations(view);
+            chartMotivations.data.labels = sorted.map(item => item.label);
+            chartMotivations.data.datasets[0].data = sorted.map(item => item.value);
+            chartMotivations.data.datasets[0].backgroundColor = view === 'male' ? 'rgba(56, 189, 248, 0.78)' : (view === 'female' ? 'rgba(244, 63, 94, 0.78)' : 'rgba(16, 185, 129, 0.78)');
             chartMotivations.update();
             renderMotivationsCards(view);
         }
@@ -1323,13 +1593,15 @@
         function renderMotivationsCards(view) {
             const container = document.getElementById('topListDisplay');
             container.innerHTML = '';
-            nhanesData.labels.slice(0, 5).forEach((label, i) => {
-                const val = nhanesData[view][i];
+            const sorted = getSortedCohortMotivations(view);
+            sorted.forEach((item, i) => {
+                const rankLabel = String(i + 1).padStart(2, '0');
+                const accentColor = view === 'male' ? 'text-cyan-400' : (view === 'female' ? 'text-rose-400' : 'text-brand-400');
                 container.innerHTML += `
                     <div class="glass-card p-4 rounded-2xl border border-slate-800 flex flex-col justify-between">
-                        <span class="text-[10px] font-mono text-brand-400 font-bold uppercase">Rank 0${i+1}</span>
-                        <div class="font-bold text-white text-xs my-1">${label}</div>
-                        <div class="text-xl font-black text-brand-300 font-mono">${val}%</div>
+                        <span class="text-[10px] font-mono ${accentColor} font-bold uppercase tabular-nums">Rank ${rankLabel}</span>
+                        <div class="font-bold text-white text-xs my-1">${item.label}</div>
+                        <div class="text-xl font-black text-brand-300 font-mono tabular-nums">${item.value}%</div>
                     </div>
                 `;
             });
@@ -1337,6 +1609,7 @@
 
         function initAgeChart() {
             const ctx = document.getElementById('ageChart').getContext('2d');
+            const palette = getChartPalette();
             chartAge = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -1354,8 +1627,8 @@
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: {
-                        y: { beginAtZero: true, max: 100, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
-                        x: { grid: { display: false }, ticks: { color: '#f8fafc', font: { weight: 'bold' } } }
+                        y: { beginAtZero: true, max: 100, grid: { color: palette.grid }, ticks: { color: palette.tickMuted } },
+                        x: { grid: { display: false }, ticks: { color: palette.tickPrimary, font: { weight: 'bold' } } }
                     }
                 }
             });
@@ -1363,6 +1636,7 @@
 
         function initSucraChart() {
             const ctx = document.getElementById('sucraChart').getContext('2d');
+            const palette = getChartPalette();
             chartSucra = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -1379,8 +1653,8 @@
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: {
-                        x: { beginAtZero: true, max: 100, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
-                        y: { grid: { display: false }, ticks: { color: '#f8fafc', font: { size: 10, weight: 'bold' } } }
+                        x: { beginAtZero: true, max: 100, grid: { color: palette.grid }, ticks: { color: palette.tickMuted } },
+                        y: { grid: { display: false }, ticks: { color: palette.tickPrimary, font: { size: 10, weight: 'bold' } } }
                     }
                 }
             });
@@ -1388,6 +1662,7 @@
 
         function initReviewChart() {
             const ctx = document.getElementById('reviewFilterChart').getContext('2d');
+            const palette = getChartPalette();
             chartReview = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -1405,8 +1680,8 @@
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: {
-                        x: { min: -100, max: 0, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8', callback: (v) => `${v}%` } },
-                        y: { grid: { display: false }, ticks: { color: '#f8fafc', font: { size: 10, weight: 'bold' } } }
+                        x: { min: -100, max: 0, grid: { color: palette.grid }, ticks: { color: palette.tickMuted, callback: (v) => `${v}%` } },
+                        y: { grid: { display: false }, ticks: { color: palette.tickPrimary, font: { size: 10, weight: 'bold' } } }
                     }
                 }
             });
@@ -1414,26 +1689,34 @@
 
         function drawSentinelCanvas() {
             const canvas = document.getElementById('sentinelCanvas');
+            if (!canvas || !canvas.parentElement) return;
             const ctx = canvas.getContext('2d');
             const plaque = parseFloat(document.getElementById('plaqueSlider').value);
 
             document.getElementById('sliderVal').innerText = `${plaque.toFixed(2)} mm`;
             document.getElementById('occlusionLabel').innerText = `Plaque Thickness: ${plaque.toFixed(2)} mm`;
 
-            // Canvas resize
-            canvas.width = canvas.parentElement.clientWidth - 32;
-            canvas.height = 240;
+            const displayWidth = Math.max(280, canvas.parentElement.clientWidth - 32);
+            const displayHeight = 250;
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.width = displayWidth * dpr;
+            canvas.height = displayHeight * dpr;
+            canvas.style.width = `${displayWidth}px`;
+            canvas.style.height = `${displayHeight}px`;
 
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.clearRect(0, 0, displayWidth, displayHeight);
+
+            const isNarrow = displayWidth < 430;
             const vessels = [
-                { name: "Penile Artery", radiusMm: 0.75, x: canvas.width * 0.2, color: "#f43f5e" },
-                { name: "Coronary Artery", radiusMm: 1.75, x: canvas.width * 0.5, color: "#38bdf8" },
-                { name: "Carotid Artery", radiusMm: 3.0, x: canvas.width * 0.8, color: "#34d399" }
+                { name: "Penile Artery", radiusMm: 0.75, x: displayWidth * 0.2, color: "#f43f5e" },
+                { name: "Coronary Artery", radiusMm: 1.75, x: displayWidth * 0.5, color: "#38bdf8" },
+                { name: "Carotid Artery", radiusMm: 3.0, x: displayWidth * 0.8, color: "#34d399" }
             ];
 
-            const centerY = canvas.height / 2 - 10;
-            const scale = 22; // px per mm
+            const centerY = displayHeight / 2 - 14;
+            const scale = isNarrow ? 15 : 21; // px per mm
 
             let penileOccludedPct = 0;
 
@@ -1467,18 +1750,19 @@
                 ctx.fill();
 
                 // Labels
+                const labelBaseY = Math.max(centerY + outerR + 20, centerY + 62);
                 ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 11px "Plus Jakarta Sans"';
+                ctx.font = `bold ${isNarrow ? 10 : 11}px "Plus Jakarta Sans"`;
                 ctx.textAlign = 'center';
-                ctx.fillText(v.name, v.x, centerY + outerR + 22);
+                ctx.fillText(v.name, v.x, labelBaseY);
 
                 ctx.fillStyle = '#94a3b8';
-                ctx.font = '10px "JetBrains Mono"';
-                ctx.fillText(`${(v.radiusMm * 2).toFixed(1)}mm Caliber`, v.x, centerY + outerR + 36);
+                ctx.font = `${isNarrow ? 9 : 10}px "JetBrains Mono"`;
+                ctx.fillText(`${(v.radiusMm * 2).toFixed(1)}mm Caliber`, v.x, labelBaseY + 14);
 
                 ctx.fillStyle = occludedPct > 60 ? '#f43f5e' : (occludedPct > 30 ? '#f59e0b' : '#34d399');
-                ctx.font = 'bold 11px "JetBrains Mono"';
-                ctx.fillText(`${occludedPct}% Occluded`, v.x, centerY + outerR + 50);
+                ctx.font = `bold ${isNarrow ? 10 : 11}px "JetBrains Mono"`;
+                ctx.fillText(`${occludedPct}% Occluded`, v.x, labelBaseY + 28);
             });
 
             // Update Dynamic Alert Box
@@ -1507,19 +1791,21 @@
         function initReferencesGrid() {
             const grid = document.getElementById('referencesGrid');
             grid.innerHTML = '';
-            Object.keys(citationDB).forEach(key => {
-                const item = citationDB[key];
-                grid.innerHTML += `
-                    <div onclick="showCitationModal(${key})" class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 hover:border-brand-500/50 cursor-pointer transition space-y-1">
-                        <div class="flex items-center justify-between">
-                            <span class="font-bold text-brand-400">[${key}]</span>
-                            <span class="text-[10px] text-slate-500">${item.year}</span>
+            Object.keys(citationDB)
+                .sort((a, b) => Number(a) - Number(b))
+                .forEach(key => {
+                    const item = citationDB[key];
+                    grid.innerHTML += `
+                        <div onclick="showCitationModal(${key})" class="p-3 bg-slate-900/90 rounded-xl border border-slate-800 hover:border-brand-500/50 cursor-pointer transition space-y-1">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-brand-400">[${key}]</span>
+                                <span class="text-[10px] text-slate-500">${item.year}</span>
+                            </div>
+                            <div class="text-white font-bold truncate">${item.title}</div>
+                            <div class="text-[10px] text-slate-400 truncate">${item.journal}</div>
                         </div>
-                        <div class="text-white font-bold truncate">${item.title}</div>
-                        <div class="text-[10px] text-slate-400 truncate">${item.journal}</div>
-                    </div>
-                `;
-            });
+                    `;
+                });
         }
 
         function showCitationModal(refNum) {
